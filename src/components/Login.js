@@ -17,10 +17,10 @@ return (
           {localStorage.getItem('username') ? (
   <>
  <Navigate to="/home" />
-    <li><a href="http://localhost:3000/home">Home</a></li>
-    <li><a href="http://localhost:3000/supersearch">Super Search</a></li>
-    <li><a href="http://localhost:3000/openers/">Openers</a></li>
-    <li><a href="http://localhost:3000/chatpayment/">Chat</a></li>
+    <li><a href="https://sidekik-frontend.onrender.com">Home</a></li>
+    <li><a href="https://sidekik-frontend.onrender.com/supersearch">Super Search</a></li>
+    <li><a href="https://sidekik-frontend.onrender.com/openers/">Openers</a></li>
+    <li><a href="https://sidekik-frontend.onrender.com/chatpayment/">Chat</a></li>
     <NavLink to="/home" className="me-auto" onClick={logout}>Logout</NavLink>
     <div className='me-auto3'>
       <span className='me-auto3__text'>Logged in as: {localStorage.getItem('username')}</span>
@@ -28,9 +28,9 @@ return (
   </>
 ) : (
   <>
-    <li><a href="http://localhost:3000/home">Home</a></li>
+    <li><a href="https://sidekik-frontend.onrender.com">Home</a></li>
     <li>
-                    <a href="http://localhost:3000/upgrade/">Upgrade</a>
+                    <a href="https://sidekik-frontend.onrender.com/upgrade/">Upgrade</a>
                   </li>
   </>
 )}
@@ -47,7 +47,7 @@ return (
                <input className="heading6" type="text" name="username" placeholder="Enter Username" value={'guest'}/>
                <input type="password" name="password" placeholder="Enter Password" value={'1111'}/>
                <input className="login-button" type="submit"/>
-               אינך משתמש רשום?<Button className="register"><a href="http://localhost:3000/signup/" style={{'color':'green'}}>הרשם מיד</a></Button>
+               אינך משתמש רשום?<Button className="register"><a href="https://sidekik-frontend.onrender.com/signup/" style={{'color':'green'}}>הרשם מיד</a></Button>
               
            </form>
        </div>
