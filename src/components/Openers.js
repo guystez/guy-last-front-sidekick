@@ -13,7 +13,7 @@ const PhrasesRow = ({logout}) => {
 
   useEffect(() => {
     if (output) {
-      // console.log("output1", output);
+      // console.log("output1",, output);
     }
   }, [output]);
 
