@@ -37,13 +37,13 @@ function HomePage({ logout }) {
               ) : (
                 <>
                   <li>
-                    <a href="http://localhost:3000/login/">Login</a>
+                    <a href="https://sidekik-frontend.onrender.com/login/">Login</a>
                   </li>
                   <li>
-                    <a href="http://localhost:3000/signup/">Signup</a>
+                    <a href="https://sidekik-frontend.onrender.com/signup/">Signup</a>
                   </li>
                   <li>
-                    <a href="http://localhost:3000/upgrade/">Upgrade</a>
+                    <a href="https://sidekik-frontend.onrender.com/upgrade/">Upgrade</a>
                   </li>
                 </>
               )}
