@@ -38,7 +38,7 @@ function App() {
   
    function login(user, pass) {
     console.log(user, pass)
-    axios.post('https://sidekik-frontend.onrender.com/login/', {
+    axios.post('http://localhost:8000/login/', {
         username: user,
         password: pass,
     })
@@ -74,7 +74,7 @@ window.onbeforeunload = function() {
 };
 
 function logout() {
-  axios.get("https://sidekik-frontend.onrender.com/logout/")
+  axios.get("http://localhost:8000/logout/")
   setSession(null)
   localStorage.removeItem('session')
   localStorage.removeItem('username')
@@ -92,7 +92,7 @@ function logout() {
     
       <Fragment>
     <Routes>
-    <Route path='https://sidekik-frontend.onrender.com/home' element={<HomePage logout={logout}></HomePage>}></Route>
+    <Route path='/home' element={<HomePage logout={logout}></HomePage>}></Route>
     <Route path='/thankyoupage' element={<Thanks logout={logout}></Thanks>}></Route>
     <Route path='/upgrade' element={<UpgradePage></UpgradePage>}></Route>
     <Route path='/signup' element={<SignupFree></SignupFree>}></Route>
