@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { CardElement, useStripe, useElements, Elements } from "@stripe/react-stripe-js";
-import { loadStripe } from "@stripe/stripe-js";
+// import { CardElement, useStripe, useElements, Elements } from "@stripe/react-stripe-js";
+// import { loadStripe } from "@stripe/stripe-js";
 import { NavLink } from 'react-router-dom';
 import { Button } from "react-bootstrap";
 import axios from 'axios';
