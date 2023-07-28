@@ -25,7 +25,7 @@ function HomePage({ logout }) {
             <ul>
               {isLoggedIn ? (
                 <>
-                  <NavLink to="/home" className="me-auto" onClick={logout}>
+                  <NavLink to="/" className="me-auto" onClick={logout}>
                     Logout
                   </NavLink>
                   <div className="me-auto3">

@@ -700,7 +700,7 @@ const username = localStorage.getItem('username');
                 <div class="userInfo">
                   <div class="userCircle">{username[0]}</div>
                   <NavLink 
-                  to="/home" 
+                  to="/" 
                   className="me-auto" 
                   onClick={() => { 
                     
