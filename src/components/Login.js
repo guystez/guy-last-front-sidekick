@@ -16,12 +16,12 @@ return (
         
           {localStorage.getItem('username') ? (
   <>
- <Navigate to="/home" />
+ <Navigate to="/" />
     <li><a href="https://sidekik-frontend.onrender.com">Home</a></li>
     <li><a href="https://sidekik-frontend.onrender.com/supersearch">Super Search</a></li>
     <li><a href="https://sidekik-frontend.onrender.com/openers/">Openers</a></li>
     <li><a href="https://sidekik-frontend.onrender.com/chatpayment/">Chat</a></li>
-    <NavLink to="/home" className="me-auto" onClick={logout}>Logout</NavLink>
+    <NavLink to="/" className="me-auto" onClick={logout}>Logout</NavLink>
     <div className='me-auto3'>
       <span className='me-auto3__text'>Logged in as: {localStorage.getItem('username')}</span>
     </div>
