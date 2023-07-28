@@ -92,7 +92,7 @@ function logout() {
     
       <Fragment>
     <Routes>
-    <Route path='/home' element={<HomePage logout={logout}></HomePage>}></Route>
+    <Route path='/' element={<HomePage logout={logout}></HomePage>}></Route>
     <Route path='/thankyoupage' element={<Thanks logout={logout}></Thanks>}></Route>
     <Route path='/upgrade' element={<UpgradePage></UpgradePage>}></Route>
     <Route path='/signup' element={<SignupFree></SignupFree>}></Route>
