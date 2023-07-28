@@ -38,7 +38,7 @@ function App() {
   
    function login(user, pass) {
     console.log(user, pass)
-    axios.post('http://localhost:8000/login/', {
+    axios.post('https://sidekik-backend.onrender.com/login/', {
         username: user,
         password: pass,
     })
@@ -74,7 +74,7 @@ window.onbeforeunload = function() {
 };
 
 function logout() {
-  axios.get("http://localhost:8000/logout/")
+  axios.get("https://sidekik-backend.onrender.com/logout/")
   setSession(null)
   localStorage.removeItem('session')
   localStorage.removeItem('username')

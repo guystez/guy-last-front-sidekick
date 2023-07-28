@@ -12,7 +12,7 @@ function Cartlist({cart,setCart}) {
     console.log(cart,"cartttttttttttttttttttttttttttttttttttt");
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/app/cart/')
+        axios.get('https://sidekik-backend.onrender.com/app/cart/')
         .then((response)=> setCart((response.data) ? response.data:[]))
       },[])
     

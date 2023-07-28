@@ -25,7 +25,7 @@ const PhrasesRow = ({logout}) => {
 
   function insert_db(event) {
     event.preventDefault(); // Prevent the default form submission behavior
-    axios.post('http://localhost:8000/app/insert_db_openers/', {
+    axios.post('https://sidekik-backend.onrender.com/app/insert_db_openers/', {
       info_to_db: info,
     })
       .then(response => {
@@ -41,7 +41,7 @@ const PhrasesRow = ({logout}) => {
     
   const fetchCartData = () => {
     const username = localStorage.getItem('username');
-    axios.get(`http://127.0.0.1:8000/app/cart_openers/?user=${username}`)
+    axios.get(`https://sidekik-backend.onrender.com/app/cart_openers/?user=${username}`)
       .then(response => {
         console.log(response.data,'response.data');
         setCart(response.data);
@@ -61,7 +61,7 @@ const PhrasesRow = ({logout}) => {
     };
   
     axios
-      .post('http://127.0.0.1:8000/app/cart_openers/', data)
+      .post('https://sidekik-backend.onrender.com/app/cart_openers/', data)
       .then(response => {
         // Handle success response
         if (response.data === 'None') {
@@ -80,7 +80,7 @@ const PhrasesRow = ({logout}) => {
 const username = localStorage.getItem('username');
 const handleDelete = (itemId) => {
   axios
-    .delete(`http://127.0.0.1:8000/app/deletecart_openers/${itemId}/${username}`) // Assuming the API endpoint for deleting an item from the cart is "/app/cart/:id/"
+    .delete(`https://sidekik-backend.onrender.com/app/deletecart_openers/${itemId}/${username}`) // Assuming the API endpoint for deleting an item from the cart is "/app/cart/:id/"
     .then(response => {
       // Handle success response
       console.log('Item deleted:', itemId);
@@ -96,7 +96,7 @@ const handleDelete = (itemId) => {
 
   function phrase_extraction(event) {
     event.preventDefault(); // Prevent the default form submission behavior
-    axios.post('http://localhost:8000/app/searchopeners/', {
+    axios.post('https://sidekik-backend.onrender.com/app/searchopeners/', {
       customer_input: searchText,
     })
       .then(response => {

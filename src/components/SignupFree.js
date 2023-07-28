@@ -25,7 +25,7 @@ const SignupFree = () => {
 
   const handleSubmit =  (e) => {
     e.preventDefault();
-       axios.post('http://localhost:8000/register/', formData)
+       axios.post('https://sidekik-backend.onrender.com/register/', formData)
           .then((response) => {
             console.log(response);
             alert('Success');

@@ -25,7 +25,7 @@ const UpgradePage = () => {
 
   const handleSubmit = async  (e) => {
     e.preventDefault();
-    const payment_check=(axios.post('http://localhost:8000/payment_request/'))
+    const payment_check=(axios.post('https://sidekik-backend.onrender.com/payment_request/'))
     payment_check.then(async (response) => {
       console.log(response.data);
     

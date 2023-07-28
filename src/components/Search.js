@@ -45,7 +45,7 @@ const Search = ({logout}) => {
   const deleteChatRoom = (roomId) => {
     const username = localStorage.getItem('username');
     localStorage.removeItem('newroomId')
-    axios.delete(`http://127.0.0.1:8000/app/delete_room/${roomId}/?username=${username}`)
+    axios.delete(`https://sidekik-backend.onrender.com/app/delete_room/${roomId}/?username=${username}`)
       .then(response => {
         // Handle the response from the server
         console.log(response.data);
@@ -65,7 +65,7 @@ const Search = ({logout}) => {
   
   const fetchChatRooms = () => {
     const username = localStorage.getItem('username');
-    axios.get(`http://127.0.0.1:8000/app/chat_room/?user=${username}`)
+    axios.get(`https://sidekik-backend.onrender.com/app/chat_room/?user=${username}`)
       .then(response => {
         setChat_room(response.data);
         console.log(response.data,'dudu');
@@ -83,7 +83,7 @@ const Search = ({logout}) => {
     const fetchChatRooms2 = () => {
       const username = localStorage.getItem('username');
     
-      axios.get(`http://127.0.0.1:8000/app/chat_room/?user=${username}`)
+      axios.get(`https://sidekik-backend.onrender.com/app/chat_room/?user=${username}`)
         .then(response => {
           const chatRooms = response.data;
           console.log(chatRooms,'chatRoomsssssss');
@@ -128,7 +128,7 @@ useEffect(() => {
 
   const createChatroom = (nextRoomId) => {
     console.log(nextRoomId,'helllooooooo');
-    axios.post('http://127.0.0.1:8000/app/create_new_room/', {
+    axios.post('https://sidekik-backend.onrender.com/app/create_new_room/', {
       user: username,
       chatroom: nextRoomId
     })
@@ -160,7 +160,7 @@ useEffect(() => {
 
   const username11 = localStorage.getItem('username');
 
-  axios.get('http://127.0.0.1:8000/app/get_max_room_id/', {
+  axios.get('https://sidekik-backend.onrender.com/app/get_max_room_id/', {
     params: {
       username: username11
     }
@@ -189,7 +189,7 @@ useEffect(() => {
     localStorage.setItem('newroomId', roomId);
 
     // localStorage.setItem('roomId', roomId);
-    axios.get(`http://127.0.0.1:8000/app/chat_history/?chat_room_id=${roomId}&user=${username}`)
+    axios.get(`https://sidekik-backend.onrender.com/app/chat_history/?chat_room_id=${roomId}&user=${username}`)
       .then(response => {
         
 
@@ -209,7 +209,7 @@ useEffect(() => {
 const username = localStorage.getItem('username');
   const handleDelete = (itemId) => {
     axios
-      .delete(`http://127.0.0.1:8000/app/deletecart/${itemId}/${username}`) // Assuming the API endpoint for deleting an item from the cart is "/app/cart/:id/"
+      .delete(`https://sidekik-backend.onrender.com/app/deletecart/${itemId}/${username}`) // Assuming the API endpoint for deleting an item from the cart is "/app/cart/:id/"
       .then(response => {
         // Handle success response
         console.log('Item deleted:', itemId);
@@ -236,7 +236,7 @@ const username = localStorage.getItem('username');
 
   useEffect(() => {
     const username = localStorage.getItem('username');
-    axios.get(`http://127.0.0.1:8000/app/chat_room/?user=${username}`)
+    axios.get(`https://sidekik-backend.onrender.com/app/chat_room/?user=${username}`)
       .then(response => {
         setChat_room(response.data);
       })
@@ -247,7 +247,7 @@ const username = localStorage.getItem('username');
 
   const fetchCartData = () => {
     const username = localStorage.getItem('username');
-    axios.get(`http://127.0.0.1:8000/app/cart/?user=${username}`)
+    axios.get(`https://sidekik-backend.onrender.com/app/cart/?user=${username}`)
       .then(response => {
         setCart(response.data);
       })
@@ -273,7 +273,7 @@ const username = localStorage.getItem('username');
 
   function insert_db(event) {
     event.preventDefault(); // Prevent the default form submission behavior
-    axios.post('http://localhost:8000/app/insert_db/', {
+    axios.post('https://sidekik-backend.onrender.com/app/insert_db/', {
       info_to_db: info,
     })
       .then(response => {
@@ -299,7 +299,7 @@ const username = localStorage.getItem('username');
     };
   
     axios
-      .post('http://127.0.0.1:8000/app/cart/', data, {
+      .post('https://sidekik-backend.onrender.com/app/cart/', data, {
         headers: {
           'Content-Type': 'application/json; charset=UTF-8'
         }
@@ -341,7 +341,7 @@ const username = localStorage.getItem('username');
   console.log(newchatroomid,'newchatroomid');
   console.log(username,'username');
   
-    axios.post('http://localhost:8000/app/search/', {
+    axios.post('https://sidekik-backend.onrender.com/app/search/', {
       customer_input: searchText,
       query: searchText,
       response: output.replace(/<\/?b>/g, ''),
@@ -417,7 +417,7 @@ const username = localStorage.getItem('username');
   
     const fetchAnswers = () => {
       console.log(question_id_final,'question_id_final');
-      axios.get(`http://127.0.0.1:8000/app/extract_answer/?users_question_id=${question_id_final}&username=${username}`)
+      axios.get(`https://sidekik-backend.onrender.com/app/extract_answer/?users_question_id=${question_id_final}&username=${username}`)
         .then(response => {
           
           if (Array.isArray(response.data)) {
@@ -457,7 +457,7 @@ const username = localStorage.getItem('username');
   useEffect(() => {
     const interval = setInterval(() => {
       const username = localStorage.getItem('username');
-      axios.get(`http://127.0.0.1:8000/app/extract_question/?username=${username}`)
+      axios.get(`https://sidekik-backend.onrender.com/app/extract_question/?username=${username}`)
       .then(response => {
         console.log(response.data,'gtgt');
           setQuestions([response.data]);
@@ -476,7 +476,7 @@ const username = localStorage.getItem('username');
     for (const questionId in answers) {
       console.log(questionId,'questionId');
         setQuestion_id_final(questionId)
-        axios.post('http://127.0.0.1:8000/app/insert_answer/', {
+        axios.post('https://sidekik-backend.onrender.com/app/insert_answer/', {
             users_question_id: questionId,
             answer: answers[questionId]
         })
@@ -507,7 +507,7 @@ const username = localStorage.getItem('username');
   console.log(searchText,'searchText22');
   setcommunitytext(searchText)
   localStorage.setItem('communitytext', searchText)
-  axios.post('http://127.0.0.1:8000/app/generate_question/', {
+  axios.post('https://sidekik-backend.onrender.com/app/generate_question/', {
     username: username1,
     question: searchText,
   })

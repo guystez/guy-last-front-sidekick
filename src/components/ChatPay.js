@@ -10,15 +10,15 @@ import axios from 'axios';
 const Chatpayment = ({logout}) => {
     const handlechatSubmit = (e) => {
         e.preventDefault();
-        const payment_check=(axios.post('http://localhost:8000/payment_request/'))
+        const payment_check=(axios.post('https://sidekik-backend.onrender.com/payment_request/'))
         payment_check.then(response => {
             if (response.data === 'guy') {
              
-                // const payment=(axios.post('http://localhost:8000/payment/'))
+                // const payment=(axios.post('https://sidekik-backend.onrender.com/payment/'))
                 // payment.then(response => {
                 //     if (response.data === 'Paid') {
     const formData=0
-        axios.post('http://localhost:8000/register/', formData)
+        axios.post('https://sidekik-backend.onrender.com/register/', formData)
           .then((response) => {
             console.log(response);
             alert('Success')

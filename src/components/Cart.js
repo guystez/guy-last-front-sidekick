@@ -7,7 +7,7 @@ function Cart() {
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/app/cart/')
+    axios.get('https://sidekik-backend.onrender.com/app/cart/')
       .then(response => {
         setCart(response.data);
       })

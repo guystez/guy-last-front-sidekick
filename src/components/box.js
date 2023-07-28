@@ -26,7 +26,7 @@ const Chatbox = () => {
     const interval = setInterval(() => {
       const username = localStorage.getItem('username');
 
-      axios.get(`http://127.0.0.1:8000/app/extract_answer/?users_question_id=${question_id_final}&username=${username}`)
+      axios.get(`https://sidekik-backend.onrender.com/app/extract_answer/?users_question_id=${question_id_final}&username=${username}`)
         .then(response => {
           console.log('API Response: ', response);
           console.log(response.data,'dayayaya');
@@ -44,7 +44,7 @@ const Chatbox = () => {
   
   useEffect(() => {
     const username = localStorage.getItem('username');
-    axios.get(`http://127.0.0.1:8000/app/extract_question/?username=${username}`)
+    axios.get(`https://sidekik-backend.onrender.com/app/extract_question/?username=${username}`)
     .then(response => {
         setQuestions([response.data]);  // Wrap response.data in an array
     })
@@ -56,7 +56,7 @@ const Chatbox = () => {
     event.preventDefault();
     for (const questionId in answers) {
       setQuestion_id_final(questionId)
-      axios.post('http://127.0.0.1:8000/app/insert_answer/', {
+      axios.post('https://sidekik-backend.onrender.com/app/insert_answer/', {
         users_question_id: questionId,
         answer: answers[questionId]
       })
@@ -76,7 +76,7 @@ const Chatbox = () => {
   
   const submitNewQuestion = (event) => {
     event.preventDefault();
-    axios.post('http://127.0.0.1:8000/app/generate_question/', {
+    axios.post('https://sidekik-backend.onrender.com/app/generate_question/', {
       username: username1,
       question: newQuestion,
     })
